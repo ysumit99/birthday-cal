@@ -146,7 +146,7 @@ const fillCard = () => {
         let personCount = segregatedBirthdays[day].length;
 
         //square count
-        let squaresPerRow = (personCount > 1) ? (Math.floor(Math.sqrt(personCount)) + 1) : 1;
+        let squaresPerRow = (Math.sqrt(personCount) % 1 === 0) ? Math.floor(Math.sqrt(personCount)) : Math.floor(Math.sqrt(personCount)) + 1;
 
         //single square dimension
         let squareDimension = cardWidth / squaresPerRow;
