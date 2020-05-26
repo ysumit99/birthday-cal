@@ -16,14 +16,14 @@ let segregatedBirthdays = {
 
 
 
-let getDayOfWeek = (date) => {
+const getDayOfWeek = (date) => {
     const dayOfWeek = new Date(date).getDay();
     return isNaN(dayOfWeek) ? null :
         ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'][dayOfWeek];
 }
 
 
-let compareDates = (a, b) => {
+const compareDates = (a, b) => {
 
     var aa = a.birthday.split('/').reverse().join(),
         bb = b.birthday.split('/').reverse().join();
@@ -31,11 +31,11 @@ let compareDates = (a, b) => {
     return aa > bb ? -1 : (aa < bb ? 1 : 0);
 }
 
-let getDimension = (id) => {
-
+const getDimension = (id) => {
+    return document.getElementById(id).clientWidth;
 }
 
-let getInitials = (name) => {
+const getInitials = (name) => {
     let initials = name.split(" ");
     return initials[0][0] + initials[1][0];
 }
@@ -46,17 +46,18 @@ const getRandomColor = () => {
     return colorsArray[Math.floor((Math.random() * colorsArray.length))];
 }
 
-let createSquare = (person) => {
+const createSquare = (person) => {
 
 
     let newElement = document.createElement("div");
+    newElement.classList.add('square');
     newElement.innerHTML = getInitials(person.name);
     newElement.style = `
         display: flex;
+        font-weight: 300; 
         justify-content: center;
         align-items: center;
         background: ${getRandomColor()};
-        border: 1px solid red;
         color: white;
         font-family: 'Open Sans', sans-serif;
      `;
@@ -64,7 +65,7 @@ let createSquare = (person) => {
     return newElement;
 }
 
-let getCardSelector = (day) => {
+const getCardSelector = (day) => {
 
     let selector = '';
 
@@ -104,19 +105,48 @@ let getCardSelector = (day) => {
     return selector;
 }
 
-let fillCard = () => {
+const resetCards = () => {
+
+    //reset data
+    for (key in segregatedBirthdays) {
+        segregatedBirthdays[key] = [];
+    }
+
+    //reset dom
+    let card = document.getElementById('card-mon');
+    card.innerHTML = '';
+    card = document.getElementById('card-tue');
+    card.innerHTML = '';
+    card = document.getElementById('card-wed');
+    card.innerHTML = '';
+    card = document.getElementById('card-thur');
+    card.innerHTML = '';
+    card = document.getElementById('card-fri');
+    card.innerHTML = '';
+    card = document.getElementById('card-sat');
+    card.innerHTML = '';
+    card = document.getElementById('card-sun');
+    card.innerHTML = '';
+
+
+
+
+
+}
+
+const fillCard = () => {
 
     for (day in segregatedBirthdays) {
 
         //get card dimensions
         let id = getCardSelector(day);
-        let cardWidth = document.getElementById(id).clientWidth;
+        let cardWidth = getDimension(id);
 
         //total squares to be generated
         let personCount = segregatedBirthdays[day].length;
 
         //square count
-        let squaresPerRow = Math.floor(Math.sqrt(personCount)) + 1;
+        let squaresPerRow = (personCount > 1) ? (Math.floor(Math.sqrt(personCount)) + 1) : 1;
 
         //single square dimension
         let squareDimension = cardWidth / squaresPerRow;
@@ -140,9 +170,12 @@ let fillCard = () => {
 
 }
 
-let getData = (e) => {
+const processInput = (e) => {
 
     e.preventDefault();
+
+    //reset previous result
+    birthdays.length > 0 ? resetCards() : null;
 
     //get input data
     birthdays = document.getElementById('json-input').value;
@@ -158,10 +191,14 @@ let getData = (e) => {
 
     sortedBirthdays.forEach((person) => {
 
-        //segregate birthdays by day of the week
-        segregatedBirthdays[getDayOfWeek(person.birthday)].push(person);
+        //get day of the week for selected year
+        let selectedYear = person.birthday.split("/").map((ele, index) => index === 2 ? year : ele).join("/");
+
+        segregatedBirthdays[getDayOfWeek(selectedYear)].push(person);
 
     });
+
+    console.log(segregatedBirthdays);
 
 
     // fill card
@@ -171,4 +208,4 @@ let getData = (e) => {
 
 }
 
-document.getElementById('update').onclick = getData;
+document.getElementById('update').onclick = processInput;
