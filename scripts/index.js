@@ -34,6 +34,29 @@ let getDimension = (id) => {
    
 }
 
+let getInitials = (name) => {
+    let initials = name.split(" ");
+    return initials[0][0] + initials[1][0];
+}
+
+let createSquare = (person) => {
+
+    
+    let newElement = document.createElement("div");
+    newElement.innerHTML = getInitials(person.name);
+    newElement.style = `
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: grey;
+        border: 1px solid red;
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+     `;
+
+    return newElement;
+}
+
 let getCardSelector = (day) => {
     
     let selector = '';
@@ -78,35 +101,29 @@ let fillCard = () => {
     
     for(day in segregatedBirthdays ){
 
-         console.log(segregatedBirthdays[day]);
+        //get card dimensions
         let id = getCardSelector(day);
         let cardWidth = document.getElementById(id).clientWidth;
+
+        //total squares to be generated
         let personCount = segregatedBirthdays[day].length;
 
-        //get nearest perfect square
-        let gridSize = Math.floor(Math.sqrt(personCount))+1;
+        //square count
+        let squaresPerRow = Math.floor(Math.sqrt(personCount))+1;
 
-        console.log("card width = " + cardWidth + " gridSize = " + gridSize);
+        //single square dimension
+        let squareDimension = cardWidth/squaresPerRow;
+
+        //dynamically create grid 
+        document.getElementById(id).style.gridTemplateColumns = `repeat(${squaresPerRow}, ${squareDimension}px)`;
+        document.getElementById(id).style.gridTemplateRows = `repeat(${squaresPerRow}, ${squareDimension}px)`;
         
-
+        //create squares
         segregatedBirthdays[day].forEach(person => {
 
-             //create element
-            let newElement = document.createElement("div");
-            
-            console.log(person);
-            let personInitials = person.name.split(" ");
-            newElement.innerHTML = personInitials[0][0] + personInitials[1][0];
-            newElement.style.height = cardWidth/gridSize;
+           let newSquare =  createSquare(person);
+           document.getElementById(id).appendChild(newSquare);
 
-            newElement.style.width = cardWidth/gridSize;
-
-            console.log("height = "  +  newElement.style.height +  " | width = " +  newElement.style.height);
-            newElement.style.display = 'block';
-            newElement.style.border = '1px solid red';
-            console.log(newElement);
-
-            document.getElementById(id).append(newElement);
         })
 
        
