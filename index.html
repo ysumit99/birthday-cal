@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Cal</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container{
+            background-color: #EAF0F2;
+            height: 100vh;
+            display: grid;
+            grid-template-areas: 
+            
+            'card-container'
+            'input-area';
+
+        }
+
+        #title {
+            font-family: 'Open Sans', sans-serif;
+            color: #717980;
+            background-color: #EAF0F2;
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            
+        }
+
+        #card-container{
+            grid-area: card-container;
+            /* background-color: antiquewhite; */
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            height: auto;
+        }
+
+
+        .card {
+            height:80%;
+            border: 1px solid grey;
+            width: 12%;
+            margin: 20px;
+            border-radius: 0.5px;
+
+        }
+
+        .card-title {
+            background-color: #AB9EEE;
+            height: 20%;
+        }
+
+        #input-area {
+            grid-area: input-area;
+            /* background-color: rgb(185, 199, 199); */
+            display: grid;
+            
+        }
+
+        #left-half {
+            grid-column: 1;
+            /* background-color: brown; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #right-half {
+            grid-column: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: top;
+            position: relative;
+            top: 10%;
+        }
+
+        #text-area {
+            grid-area: text-area;
+            background-color: rgb(136, 136, 195);
+        }
+
+        #json-input {
+            height: 80%;
+            width: 80%;
+        }
+
+        #input-btn{
+            grid-area: input-btn;
+            background-color: beige;
+        }
+
+
+        #update-btn {
+            grid-area: update-btn;
+            background-color: burlywood;
+        }
+
+        input[type=text]  {
+            width: 40%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 20%;
+            background-color: #3186EF;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: rgb(47, 107, 180);
+        }
+    </style>
+</head>
+
+<body>
+     <!-- title -->
+     <div id="title">
+        Birthday Cal
+    </div>
+    <!-- end title -->
+    <!-- container -->
+    <div id="container">
+
+       
+
+        <!-- cards -->
+        <div id="card-container">
+            <div class="card" id="card-mon">
+                <div class="card-title"></div>
+            </div>
+            <div class="card" id="card-tue">
+                <div class="card-title"></div>
+            </div>
+            <div class="card" id="card-wed">
+                <div class="card-title"></div>
+            </div>
+            <div class="card" id="card-thur">
+                <div class="card-title"></div>
+            </div>
+            <div class="card" id="card-fri">
+                <div class="card-title"></div>
+            </div>
+            <div class="card" id="card-sat">
+                <div class="card-title"></div>
+            </div>
+            <div class="card" id="card-sun">
+                <div class="card-title"></div>
+            </div>
+           
+        </div>
+       
+        <!-- input-area -->
+        <div id="input-area">
+           <div id="left-half">
+               <textarea name="json-input" id="json-input" ></textarea>
+           </div>
+           <div id="right-half">
+            <label for="json-input">Year</label>
+            <input type="text" id="year-input" name="year-input" placeholder="Enter year..">
+
+            <input type="submit" value="UPDATE">
+           </div>
+        </div>
+
+    </div>
+    <!-- end container -->
+    
+</body>
+<script src="./scripts/index.js"></script>
+</html>
