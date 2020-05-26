@@ -1,12 +1,24 @@
 let birthdays = [];
 let year;
 
+//birthdays by day of week
+let segregatedBirthdays = {
+    "monday" : [],
+    "tuesday" : [],
+    "wednesday" : [],
+    "thursday" : [],
+    "friday" : [],
+    "saturday" : [],
+    "sunday" : []
+};
 
 
-let dayOfWeek = (date) => {
+
+
+let getDayOfWeek = (date) => {
     const dayOfWeek = new Date(date).getDay();    
     return isNaN(dayOfWeek) ? null : 
-      ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayOfWeek];
+      ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'][dayOfWeek];
 }
 
 
@@ -32,8 +44,16 @@ let getData = (e) => {
 //sort birthday by youngest to oldest
  let sortedBirthdays = birthdays.sort(compareDates);
  console.log(sortedBirthdays);
-    
+
+ 
+ sortedBirthdays.forEach((person) => {
    
+  //segregate birthdays by day of the week
+   segregatedBirthdays[getDayOfWeek(person.birthday)].push(person);
+ })
+
+    
+ console.log(segregatedBirthdays);
 
 }
 
