@@ -8,6 +8,10 @@ Birthday Cal is a week long Cal. It's a fun way to demonstrate Vanilla JS skills
 
 [Deployed Site](https://birthday-cal.netlify.app)
 
+## Site Snap
+
+![Snap of the site](https://github.com/ysumit99/birthday-cal/images/site-snap.png)
+
 ## Filling Cards with equal size squares
 
 Lets take for exmaple any card, lets assume Monday.
