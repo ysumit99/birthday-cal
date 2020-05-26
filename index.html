@@ -19,62 +19,69 @@
 
         #container{
             background-color: #EAF0F2;
-            height: 100vh;
-            display: grid;
-            grid-template-areas: 
-            
-            'card-container'
-            'input-area';
+            /* height: 100vh; */
 
         }
 
         #title {
+
+            grid-area: title;
             font-family: 'Open Sans', sans-serif;
             color: #717980;
             background-color: #EAF0F2;
-            height: 10vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 40px;
+            font-size: 2rem;
+            border: 1px solid black;
 
             
         }
 
         #card-container{
+            margin-top: 30px;
             grid-area: card-container;
-            /* background-color: antiquewhite; */
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            width: 100%;
-            height: auto;
+            display: grid;
+            gap: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+            border: 1px solid black;
+           
         }
 
 
         .card {
-            height:80%;
+            height: 100%;
+            min-height: 300px;
             border: 1px solid grey;
-            width: 12%;
-            margin: 20px;
             border-radius: 0.5px;
-
+            border-radius: 5px;
+            box-sizing: border-box;
+            
         }
 
         .card-title {
             background-color: #AB9EEE;
             height: 20%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        label {
+            color: grey;
+            font-family: 'Open Sans', sans-serif;
         }
 
         #input-area {
             grid-area: input-area;
             /* background-color: rgb(185, 199, 199); */
             display: grid;
+            margin-top: 50px;
             
         }
 
         #left-half {
             grid-column: 1;
-            /* background-color: brown; */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -86,7 +93,7 @@
             flex-direction: column;
             justify-content: top;
             position: relative;
-            top: 10%;
+            
         }
 
         #text-area {
@@ -95,8 +102,9 @@
         }
 
         #json-input {
-            height: 80%;
-            width: 80%;
+            height: 100%;
+            min-height: 300px;
+            width: 90%;
         }
 
         #input-btn{
@@ -134,19 +142,48 @@
         input[type=submit]:hover {
             background-color: rgb(47, 107, 180);
         }
+
+        @media only screen and (max-width: 768px) {
+            .card {
+                min-height: 100px;
+            }
+
+            input[type=text] {
+            width: 60%;
+            }
+
+            input[type=submit] {
+            width: 50%;
+            }
+
+            #input-area{
+                margin-top: 15px;
+            }
+
+            #title {
+                padding: 20px;
+            }
+
+            #json-input {
+            
+                min-height: 80px;
+            }
+            
+        }
+
     </style>
 </head>
 
 <body>
-     <!-- title -->
-     <div id="title">
-        Birthday Cal
-    </div>
-    <!-- end title -->
+    
     <!-- container -->
     <div id="container">
 
-       
+         <!-- title -->
+        <div id="title">
+            Birthday Cal
+        </div>
+        <!-- end title -->
 
         <!-- cards -->
         <div id="card-container">
@@ -174,18 +211,20 @@
            
         </div>
        
+        <!-- <form action=""> -->
         <!-- input-area -->
-        <div id="input-area">
-           <div id="left-half">
-               <textarea name="json-input" id="json-input" ></textarea>
-           </div>
-           <div id="right-half">
-            <label for="json-input">Year</label>
-            <input type="text" id="year-input" name="year-input" placeholder="Enter year..">
+            <div id="input-area">
+                <div id="left-half">
+                    <textarea name="json-input" id="json-input" ></textarea>
+                </div>
+                <div id="right-half">
+                    <label for="json-input">Year</label>
+                    <input type="text" id="year-input" name="year-input" placeholder="Enter year.." required>
 
-            <input type="submit" value="UPDATE">
-           </div>
-        </div>
+                    <input type="submit" id="update" value="UPDATE">
+                </div>
+            </div>
+        <!-- </form> -->
 
     </div>
     <!-- end container -->
