@@ -10,7 +10,7 @@ Birthday Cal is a week long Cal. It's a fun way to demonstrate Vanilla JS skills
 
 ## Site Snap
 
-![Snap of the site](https://github.com/ysumit99/birthday-cal/images/site-snap.png)
+![Snap of the site](https://github.com/ysumit99/birthday-cal/blob/master/images/site-snap.png)
 
 ## Filling Cards with equal size squares
 
