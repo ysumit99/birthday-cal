@@ -1,5 +1,13 @@
 # Birthday Cal
 
+Birthday Cal is a week long Cal. It's a fun way to demonstrate Vanilla JS skills.
+
+## Deployment
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1c433269-69cc-4210-971c-6ed4d7a3a38a/deploy-status)](https://app.netlify.com/sites/birthday-cal/deploys)
+
+[Deployed Site](https://birthday-cal.netlify.app)
+
 ## Filling Cards with equal size squares
 
 Lets take for exmaple any card, lets assume Monday.

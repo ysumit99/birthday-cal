@@ -126,10 +126,6 @@ input[type="submit"]:hover {
   background-color: rgb(47, 107, 180);
 }
 
-/* .no-birthday-img {
-  background: url("../images/no-birthday.svg");
-} */
-
 @media only screen and (max-width: 768px) {
   .card {
     min-height: 100px;
