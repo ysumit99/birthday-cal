@@ -19,8 +19,6 @@
 
         #container{
             background-color: #EAF0F2;
-           
-
         }
 
         #title {
@@ -40,6 +38,7 @@
         }
 
         #card-container{
+
             margin-top: 30px;
             grid-area: card-container;
             display: grid;
@@ -51,6 +50,7 @@
 
 
         .card {
+
             height: 350px;
             width: 300px;
             border: 1px solid grey;
@@ -61,26 +61,38 @@
         }
 
         .card-title {
+
             background-color: #AB9EEE;
             height: 50px;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-body {
+            display: grid;
         }
 
         label {
+
             color: grey;
             font-family: 'Open Sans', sans-serif;
         }
 
         #input-area {
+
             grid-area: input-area;
-            /* background-color: rgb(185, 199, 199); */
             display: grid;
             margin-top: 50px;
             
         }
 
         #left-half {
+
             grid-column: 1;
             display: flex;
             align-items: center;
@@ -88,6 +100,7 @@
         }
 
         #right-half {
+
             grid-column: 2;
             display: flex;
             flex-direction: column;
@@ -187,26 +200,33 @@
 
         <!-- cards -->
         <div id="card-container">
-            <div class="card" id="card-mon">
-                <div class="card-title"></div>
+            <div class="card">
+                <div class="card-title">MON</div>
+                <div class="card-body" id="card-mon" ></div>
             </div>
-            <div class="card" id="card-tue">
-                <div class="card-title"></div>
+            <div class="card">
+                <div class="card-title">TUE</div>
+                <div class="card-body" id="card-tue" ></div>
             </div>
-            <div class="card" id="card-wed">
-                <div class="card-title"></div>
+            <div class="card">
+                <div class="card-title">WED</div>
+                <div class="card-body" id="card-wed"></div>
             </div>
-            <div class="card" id="card-thur">
-                <div class="card-title"></div>
+            <div class="card">
+                <div class="card-title">THUR</div>
+                <div class="card-body" id="card-thur"></div>
             </div>
-            <div class="card" id="card-fri">
-                <div class="card-title"></div>
+            <div class="card">
+                <div class="card-title">FRI</div>
+                <div class="card-body" id="card-fri"></div>
             </div>
-            <div class="card" id="card-sat">
-                <div class="card-title"></div>
+            <div class="card">
+                <div class="card-title">SAT</div>
+                <div class="card-body" id="card-sat"></div>
             </div>
-            <div class="card" id="card-sun">
-                <div class="card-title"></div>
+            <div class="card">
+                <div class="card-title">SUN</div>
+                <div class="card-body" id="card-sun"></div>
             </div>
            
         </div>
@@ -225,6 +245,7 @@
                 </div>
             </div>
         </form>
+        <!-- end input-area -->
 
     </div>
     <!-- end container -->
