@@ -165,4 +165,4 @@ const processInput = (e) => {
 
 }
 
-document.getElementById('update').onclick = processInput;
+document.getElementById('birthday-cal').onsubmit = processInput;
