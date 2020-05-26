@@ -41,7 +41,7 @@ let getData = (e) => {
   //parse data
    birthdays = JSON.parse(birthdays);
  
-//sort birthday by youngest to oldest
+ //sort birthday by youngest to oldest
  let sortedBirthdays = birthdays.sort(compareDates);
  console.log(sortedBirthdays);
 
@@ -50,6 +50,7 @@ let getData = (e) => {
    
   //segregate birthdays by day of the week
    segregatedBirthdays[getDayOfWeek(person.birthday)].push(person);
+   
  })
 
     
