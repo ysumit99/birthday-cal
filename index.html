@@ -1,255 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Birthday Cal</title>
     <!-- styles -->
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css" />
     <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-        *{
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-        #container{
-            background-color: #EAF0F2;
-        }
+      #container {
+        background-color: #eaf0f2;
+      }
 
-        #title {
+      #title {
+        grid-area: title;
+        font-family: "Open Sans", sans-serif;
+        color: #717980;
+        background-color: #eaf0f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        font-size: 2rem;
+        border: 1px solid black;
+      }
 
-            grid-area: title;
-            font-family: 'Open Sans', sans-serif;
-            color: #717980;
-            background-color: #EAF0F2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
-            font-size: 2rem;
-            border: 1px solid black;
+      #card-container {
+        margin-top: 30px;
+        grid-area: card-container;
+        display: grid;
+        gap: 50px;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        border: 1px solid black;
+      }
 
-            
-        }
+      .card {
+        height: 350px;
+        width: 300px;
+        border: 1px solid grey;
+        border-radius: 0.5px;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
 
-        #card-container{
+      .card-title {
+        background-color: #ab9eee;
+        height: 50px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        color: white;
+        font-family: "Open Sans", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-            margin-top: 30px;
-            grid-area: card-container;
-            display: grid;
-            gap: 50px;
-            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-            border: 1px solid black;
-           
-        }
+      .card-body {
+        display: grid;
+        background-color: white;
+      }
 
+      label {
+        color: grey;
+        font-family: "Open Sans", sans-serif;
+      }
 
+      #input-area {
+        grid-area: input-area;
+        display: grid;
+        margin-top: 50px;
+      }
+
+      #left-half {
+        grid-column: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #right-half {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: top;
+        position: relative;
+      }
+
+      #text-area {
+        grid-area: text-area;
+        background-color: rgb(136, 136, 195);
+      }
+
+      #json-input {
+        height: 100%;
+        min-height: 300px;
+        width: 90%;
+      }
+
+      #input-btn {
+        grid-area: input-btn;
+        background-color: beige;
+      }
+
+      #update-btn {
+        grid-area: update-btn;
+        background-color: burlywood;
+      }
+
+      input[type="text"] {
+        width: 40%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"] {
+        width: 20%;
+        background-color: #3186ef;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: rgb(47, 107, 180);
+      }
+
+      @media only screen and (max-width: 768px) {
         .card {
-
-            height: 350px;
-            width: 300px;
-            border: 1px solid grey;
-            border-radius: 0.5px;
-            border-radius: 5px;
-            box-sizing: border-box;
-            
+          min-height: 100px;
         }
 
-        .card-title {
-
-            background-color: #AB9EEE;
-            height: 50px;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-            color: white;
-            font-family: 'Open Sans', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        input[type="text"] {
+          width: 60%;
         }
 
-        .card-body {
-           display: grid;
-        }
-
-        label {
-
-            color: grey;
-            font-family: 'Open Sans', sans-serif;
+        input[type="submit"] {
+          width: 50%;
         }
 
         #input-area {
-
-            grid-area: input-area;
-            display: grid;
-            margin-top: 50px;
-            
+          margin-top: 15px;
         }
 
-        #left-half {
-
-            grid-column: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #right-half {
-
-            grid-column: 2;
-            display: flex;
-            flex-direction: column;
-            justify-content: top;
-            position: relative;
-            
-        }
-
-        #text-area {
-            grid-area: text-area;
-            background-color: rgb(136, 136, 195);
+        #title {
+          padding: 20px;
         }
 
         #json-input {
-            height: 100%;
-            min-height: 300px;
-            width: 90%;
+          min-height: 80px;
         }
-
-        #input-btn{
-            grid-area: input-btn;
-            background-color: beige;
-        }
-
-
-        #update-btn {
-            grid-area: update-btn;
-            background-color: burlywood;
-        }
-
-        input[type=text]  {
-            width: 40%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        input[type=submit] {
-            width: 20%;
-            background-color: #3186EF;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        input[type=submit]:hover {
-            background-color: rgb(47, 107, 180);
-        }
-
-        @media only screen and (max-width: 768px) {
-            .card {
-                min-height: 100px;
-            }
-
-            input[type=text] {
-            width: 60%;
-            }
-
-            input[type=submit] {
-            width: 50%;
-            }
-
-            #input-area{
-                margin-top: 15px;
-            }
-
-            #title {
-                padding: 20px;
-            }
-
-            #json-input {
-            
-                min-height: 80px;
-            }
-            
-        }
-
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    
+  <body>
     <!-- container -->
     <div id="container">
+      <!-- title -->
+      <div id="title">
+        Birthday Cal
+      </div>
+      <!-- end title -->
 
-         <!-- title -->
-        <div id="title">
-            Birthday Cal
+      <!-- cards -->
+      <div id="card-container">
+        <div class="card">
+          <div class="card-title">MON</div>
+          <div class="card-body" id="card-mon"></div>
         </div>
-        <!-- end title -->
+        <div class="card">
+          <div class="card-title">TUE</div>
+          <div class="card-body" id="card-tue"></div>
+        </div>
+        <div class="card">
+          <div class="card-title">WED</div>
+          <div class="card-body" id="card-wed"></div>
+        </div>
+        <div class="card">
+          <div class="card-title">THUR</div>
+          <div class="card-body" id="card-thur"></div>
+        </div>
+        <div class="card">
+          <div class="card-title">FRI</div>
+          <div class="card-body" id="card-fri"></div>
+        </div>
+        <div class="card">
+          <div class="card-title">SAT</div>
+          <div class="card-body" id="card-sat"></div>
+        </div>
+        <div class="card">
+          <div class="card-title">SUN</div>
+          <div class="card-body" id="card-sun"></div>
+        </div>
+      </div>
 
-        <!-- cards -->
-        <div id="card-container">
-            <div class="card">
-                <div class="card-title">MON</div>
-                <div class="card-body" id="card-mon" ></div>
-            </div>
-            <div class="card">
-                <div class="card-title">TUE</div>
-                <div class="card-body" id="card-tue" ></div>
-            </div>
-            <div class="card">
-                <div class="card-title">WED</div>
-                <div class="card-body" id="card-wed"></div>
-            </div>
-            <div class="card">
-                <div class="card-title">THUR</div>
-                <div class="card-body" id="card-thur"></div>
-            </div>
-            <div class="card">
-                <div class="card-title">FRI</div>
-                <div class="card-body" id="card-fri"></div>
-            </div>
-            <div class="card">
-                <div class="card-title">SAT</div>
-                <div class="card-body" id="card-sat"></div>
-            </div>
-            <div class="card">
-                <div class="card-title">SUN</div>
-                <div class="card-body" id="card-sun"></div>
-            </div>
-           
-        </div>
-       
-        <form action="#">
+      <form action="#">
         <!-- input-area -->
-            <div id="input-area">
-                <div id="left-half">
-                    <textarea name="json-input" id="json-input" required></textarea>
-                </div>
-                <div id="right-half">
-                    <label for="json-input">Year</label>
-                    <input type="text" id="year-input" name="year-input" placeholder="Enter year.." required />
+        <div id="input-area">
+          <div id="left-half">
+            <textarea name="json-input" id="json-input" required></textarea>
+          </div>
+          <div id="right-half">
+            <label for="json-input">Year</label>
+            <input
+              type="text"
+              id="year-input"
+              name="year-input"
+              placeholder="Enter year.."
+              required
+            />
 
-                    <input type="submit" id="update" value="UPDATE">
-                </div>
-            </div>
-        </form>
-        <!-- end input-area -->
-
+            <input type="submit" id="update" value="UPDATE" />
+          </div>
+        </div>
+      </form>
+      <!-- end input-area -->
     </div>
     <!-- end container -->
-    
-</body>
-<script src="./scripts/index.js"></script>
+  </body>
+  <script src="./scripts/index.js"></script>
 </html>
