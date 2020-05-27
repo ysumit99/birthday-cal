@@ -20,6 +20,9 @@ body {
   justify-content: center;
   padding: 40px;
   font-size: 2rem;
+  letter-spacing: 3px;
+  font-weight: 300;
+  text-transform: capitalize;
 }
 
 #card-container {
@@ -40,7 +43,13 @@ body {
   -webkit-box-shadow: 5px 11px 24px -6px rgba(71, 65, 71, 1);
   -moz-box-shadow: 5px 11px 24px -6px rgba(71, 65, 71, 1);
   box-shadow: 5px 11px 24px -6px rgba(71, 65, 71, 1);
-  animation: bounceIn 2s;
+}
+
+.card:hover {
+  -webkit-box-shadow: 10px 14px 25px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 14px 25px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 14px 25px 1px rgba(0, 0, 0, 0.75);
+  transition: box-shadow 0.2s ease;
 }
 
 .card-title {
@@ -55,10 +64,21 @@ body {
   align-items: center;
 }
 
+.card-title:hover {
+  background-color: #8776d8;
+  transition: box-shadow 0.4s ease;
+}
+
 .card-body {
   display: grid;
   height: calc(100% - 50px);
   background-color: white;
+}
+
+.square:hover {
+  -webkit-box-shadow: 12px 11px 24px 4px rgba(0, 0, 0, 0.69);
+  -moz-box-shadow: 12px 11px 24px 4px rgba(0, 0, 0, 0.69);
+  box-shadow: 12px 11px 24px 4px rgba(0, 0, 0, 0.69);
 }
 
 label {
@@ -115,6 +135,13 @@ label {
   width: 90%;
 }
 
+#json-input:hover {
+  -webkit-box-shadow: 10px 14px 25px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 14px 25px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 14px 25px 1px rgba(0, 0, 0, 0.75);
+  transition: box-shadow 0.2s ease;
+}
+
 #input-btn {
   grid-area: input-btn;
   background-color: beige;
@@ -133,6 +160,13 @@ input[type="text"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+input[type="text"]:hover {
+  webkit-box-shadow: 10px 14px 37px -16px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 14px 37px -16px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 14px 37px -16px rgba(0, 0, 0, 0.75);
+  transition: box-shadow 0.2s ease;
 }
 
 input[type="submit"] {

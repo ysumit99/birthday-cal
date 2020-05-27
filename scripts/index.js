@@ -33,6 +33,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         background: ${getRandomColor()};
         color: white;
         font-family: 'Open Sans', sans-serif;
+        
      `;
 
         return newElement;
