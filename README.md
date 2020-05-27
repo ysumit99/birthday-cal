@@ -58,3 +58,7 @@ Just drop a json data in the text area in the below given format and hit the upd
 2.  `cd` into the repository folder
 
 3.  Open the index.html file using modern web browser or launch using live server in VSCode.
+
+## App Performance
+
+![LightHouse audit](./images/auditLightHouse.png)
