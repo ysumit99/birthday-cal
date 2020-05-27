@@ -1,6 +1,6 @@
 # Birthday Cal
 
-Birthday Cal is a week long Cal. It's a fun way to demonstrate Vanilla JS skills.
+Birthday Cal is a week long Calendar. It's a fun way to demonstrate Vanilla JS skills.
 
 ## Deployment
 
@@ -8,19 +8,37 @@ Birthday Cal is a week long Cal. It's a fun way to demonstrate Vanilla JS skills
 
 [Deployed Site](https://birthday-cal.netlify.app)
 
-## Site Snap
+## How does it work
+Just drop a json data in the text area in the below given format and hit the update button to see the magic!
 
-![Snap of the site](https://github.com/ysumit99/birthday-cal/blob/master/images/site-snap.png)
+```js
+[
+  {
+    "name": "Tyrion Lannister",
+    "birthday": "12/02/1978"
+  },
+  {
+    "name": "Cersei Lannister",
+    "birthday": "11/30/1975"
+  },
+  {
+    "name": "Daenerys Targaryen",
+    "birthday": "11/24/1991"
+  },
+  {
+    "name": "Arya Stark",
+    "birthday": "11/25/1996"
+  }
+]
 
-## Filling Cards with equal size squares
+```
 
-Lets take for exmaple any card, lets assume Monday.
-If 'N' people have their birthdays on Monday.
-No. of equal sized grids to be made can be calculated by
-getting the nearest perfect square, greater than or equal to 'N'.
+### Input
 
-example: Assume there are 7 people with their birthdays on Monday.
+![Snap of the site](https://github.com/ysumit99/birthday-cal/blob/master/images/input.png)
+![Snap of the site](https://github.com/ysumit99/birthday-cal/blob/master/images/input2.png)
 
-What should be the size of the grid ?
+### Output
+![Snap of the site](https://github.com/ysumit99/birthday-cal/blob/master/images/output.png)
+![Snap of the site](https://github.com/ysumit99/birthday-cal/blob/master/images/output2.png)
 
-perfect square nearest to 7 is 9. so a grid of 3X3 is to be made before actually filling the card.
