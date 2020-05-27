@@ -29,6 +29,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         font-weight: 300; 
         justify-content: center;
         align-items: center;
+        border: 1px solid white;
         background: ${getRandomColor()};
         color: white;
         font-family: 'Open Sans', sans-serif;
@@ -97,17 +98,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
             let id = getCardSelector(day);
             let cardWidth = getDimension(id);
 
-            console.log("day = " + day + "cardWidth =  " + cardWidth);
 
             //total squares to be generated
             let personCount = segregatedBirthdays[day].length;
 
             //square count
             let squaresPerRow = (Math.sqrt(personCount) % 1 === 0) ? Math.floor(Math.sqrt(personCount)) : Math.floor(Math.sqrt(personCount)) + 1;
-            console.log(squaresPerRow);
+            //console.log(squaresPerRow);
             //each square dimension
             let squareDimension = cardWidth / squaresPerRow;
-            console.log("squareDimension = " + squareDimension);
+
 
             //dynamically create grid 
             document.getElementById(id).style.gridTemplateColumns = `repeat(${squaresPerRow}, ${squareDimension}px)`;
@@ -146,11 +146,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
         year = document.getElementById('year-input').value;
 
         //parse data
-        birthdays = JSON.parse(birthdays);
+
+        try {
+            birthdays = JSON.parse(birthdays);
+        } catch (e) {
+            alert("Please enter a valid data");
+            location.reload();
+        }
 
         //sort birthday by youngest to oldest
         let sortedBirthdays = birthdays.sort(compareDates);
-        console.log(sortedBirthdays);
+        // console.log(sortedBirthdays);
 
 
         sortedBirthdays.forEach((person) => {
@@ -162,7 +168,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         });
 
-        console.log(segregatedBirthdays);
+        // console.log(segregatedBirthdays);
 
 
         // fill card
