@@ -40,3 +40,13 @@ Just drop a json data in the text area in the below given format and hit the upd
 ### Output
 
 ![sample output](https://github.com/ysumit99/birthday-cal/blob/master/images/output.png)
+
+## Usage
+
+1. Clone the repository 
+
+		git clone URL
+
+2. `cd` into the repository folder
+
+3. Open the index.html file using modern web browser or launch using live server in VSCode.
