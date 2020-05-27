@@ -45,17 +45,27 @@ window.addEventListener('DOMContentLoaded', (event) => {
         let newElement = document.createElement("div");
         newElement.classList.add('square');
         newElement.classList.add('no-birthday-img');
-        newElement.innerHTML = `
-    <div>
-        <img src='../images/no-birthday.svg' class="no-birthday-img" />
-        <p class="no-birthday-text">No Birthdays!</p>
-    </div>
-    `;
         newElement.style = `
         display: flex;
         justify-content: center;
         align-items: center;
     `;
+        newElement.innerHTML = `
+    <div>
+   
+        <img src='../images/no-birthday.svg' class="no-birthday-img" style = "display: block;
+        margin: auto;
+        height: 100%;
+        width: 100%;" />
+
+        <p class="no-birthday-text" style=" text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.2rem;
+        color: grey;
+        margin-top: 5px;">No Birthdays!</p>
+    </div>
+    `;
+
         return newElement;
     }
 

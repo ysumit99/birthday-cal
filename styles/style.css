@@ -10,10 +10,6 @@ body {
   background-color: #eaf0f2;
 }
 
-#container {
-  background-color: #eaf0f2;
-}
-
 #title {
   grid-area: title;
   font-family: "Open Sans", sans-serif;
@@ -106,19 +102,6 @@ label {
   flex-direction: column;
   justify-content: top;
   position: relative;
-}
-.no-birthday-img {
-  display: block;
-  margin: auto;
-  height: 100%;
-  width: 100%;
-}
-.no-birthday-text {
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.2rem;
-  color: grey;
-  margin-top: 5px;
 }
 
 #text-area {
