@@ -1,7 +1,5 @@
 window.addEventListener('DOMContentLoaded', (event) => {
 
-
-
     //input data
     let birthdays = [];
     let year;
@@ -110,13 +108,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
             let cardWidth = getDimension(id);
 
 
-            //total squares to be generated
+            //squares and dimension calculation
             let personCount = segregatedBirthdays[day].length;
-
-            //square count
             let squaresPerRow = (Math.sqrt(personCount) % 1 === 0) ? Math.floor(Math.sqrt(personCount)) : Math.floor(Math.sqrt(personCount)) + 1;
-            //console.log(squaresPerRow);
-            //each square dimension
             let squareDimension = cardWidth / squaresPerRow;
 
 
@@ -211,26 +205,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         //sort birthday by youngest to oldest
         let sortedBirthdays = birthdays.sort(compareDates);
-        // console.log(sortedBirthdays);
 
 
+        //segregate by day of week
         sortedBirthdays.forEach((person) => {
 
-            //get day of the week for selected year
             let selectedYear = person.birthday.split("/").map((ele, index) => index === 2 ? year : ele).join("/");
-
             segregatedBirthdays[getDayOfWeek(selectedYear)].push(person);
 
         });
 
-        // console.log(segregatedBirthdays);
-
-
         // fill card
         fillCard();
-
-
-
     }
 
     document.getElementById('birthday-cal').onsubmit = processInput;
