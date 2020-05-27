@@ -1,5 +1,7 @@
 # Birthday Cal
 
+<img src = "./images/calendar-icon.svg" height = "100px" width = "100px" />
+
 Birthday Cal is a week long Calendar. It's a fun way to demonstrate Vanilla JS skills.
 
 ## Deployment
