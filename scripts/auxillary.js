@@ -67,3 +67,4 @@ const getCardSelector = (day) => {
 
     return selector;
 }
+

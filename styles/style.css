@@ -4,6 +4,12 @@
   padding: 0;
 }
 
+html,
+body {
+  height: 100%;
+  background-color: #eaf0f2;
+}
+
 #container {
   background-color: #eaf0f2;
 }
@@ -35,6 +41,10 @@
   border-radius: 0.5px;
   border-radius: 5px;
   box-sizing: border-box;
+  -webkit-box-shadow: 5px 11px 24px -6px rgba(71, 65, 71, 1);
+  -moz-box-shadow: 5px 11px 24px -6px rgba(71, 65, 71, 1);
+  box-shadow: 5px 11px 24px -6px rgba(71, 65, 71, 1);
+  animation: bounceIn 2s;
 }
 
 .card-title {
@@ -64,6 +74,23 @@ label {
   grid-area: input-area;
   display: grid;
   margin-top: 50px;
+}
+
+::placeholder {
+  font-size: 1rem;
+  color: rgb(187, 176, 176);
+}
+
+/* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+  font-size: 1rem;
+  color: rgb(187, 176, 176);
+}
+
+/* Microsoft Edge */
+::-ms-input-placeholder {
+  font-size: 1rem;
+  color: rgb(187, 176, 176);
 }
 
 #left-half {
@@ -134,6 +161,9 @@ input[type="submit"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  -webkit-box-shadow: -2px 11px 13px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -2px 11px 13px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: -2px 11px 13px -8px rgba(0, 0, 0, 0.75);
 }
 
 input[type="submit"]:hover {
