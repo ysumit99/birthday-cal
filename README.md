@@ -33,20 +33,26 @@ Just drop a json data in the text area in the below given format and hit the upd
 ];
 ```
 
+### sample data file
+
+[data.json](./data.json)
+
 ### Input
 
-![sample input](https://github.com/ysumit99/birthday-cal/blob/master/images/input.png)
+![sample input](./images/input.png)
 
 ### Output
 
-![sample output](https://github.com/ysumit99/birthday-cal/blob/master/images/output.png)
+![sample output](./images/output.png)
+
+![no birthday](./images/output2.png)
 
 ## Usage
 
-1. Clone the repository 
+1.  Clone the repository
 
-		git clone URL
+        git clone URL
 
-2. `cd` into the repository folder
+2.  `cd` into the repository folder
 
-3. Open the index.html file using modern web browser or launch using live server in VSCode.
+3.  Open the index.html file using modern web browser or launch using live server in VSCode.
