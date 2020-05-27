@@ -68,3 +68,12 @@ const getCardSelector = (day) => {
     return selector;
 }
 
+
+const isValidDate = (dateString) => {
+
+    if (!isNaN(Date.parse(dateString))) {
+        return true;
+    } else {
+        return false;
+    }
+}

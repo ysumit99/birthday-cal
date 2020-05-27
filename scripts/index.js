@@ -145,6 +145,31 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     }
 
+
+    const validateData = (ele) => {
+
+        let errorMessage = "";
+
+        if (!("name" in ele)) {
+            errorMessage = "name not found";
+
+        } else if (!("birthday" in ele)) {
+
+            errorMessage = "birthday not found";
+
+        } else if (ele["name"].split(" ").length < 2) {
+
+            errorMessage = "first or last name missing";
+
+        } else if (!isValidDate(ele["birthday"])) {
+
+            errorMessage = "not a valid date";
+        }
+
+
+        return errorMessage;
+    }
+
     const processInput = (e) => {
 
         e.preventDefault();
@@ -160,6 +185,25 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         try {
             birthdays = JSON.parse(birthdays);
+
+            //convert to array if single object
+            if (!Array.isArray(birthdays)) {
+                let temp = [];
+                temp.push(birthdays);
+                birthdays = temp;
+            }
+
+            //validation
+            for (let i = 0; i < birthdays.length; i++) {
+
+                errorMessage = validateData(birthdays[i]);
+                if (errorMessage !== "") {
+                    alert(errorMessage);
+                    location.reload();
+                }
+            }
+
+
         } catch (e) {
             alert("Please enter a valid data");
             location.reload();
