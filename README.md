@@ -35,10 +35,10 @@ Just drop a json data in the text area in the below given format and hit the upd
 
 ### Input
 
-![Snap of the site](https://github.com/ysumit99/birthday-cal/blob/master/images/input.png)
-![Snap of the site](https://github.com/ysumit99/birthday-cal/blob/master/images/input2.png)
+![sample input](https://github.com/ysumit99/birthday-cal/blob/master/images/input.png)
+![sample input](https://github.com/ysumit99/birthday-cal/blob/master/images/input2.png)
 
 ### Output
 
-![Snap of the site](https://github.com/ysumit99/birthday-cal/blob/master/images/output.png)
-![Snap of the site](https://github.com/ysumit99/birthday-cal/blob/master/images/output2.png)
+![sample output](https://github.com/ysumit99/birthday-cal/blob/master/images/output.png)
+![sample output](https://github.com/ysumit99/birthday-cal/blob/master/images/output2.png)
