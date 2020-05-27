@@ -42,8 +42,9 @@ const noBirthdaySquare = () => {
     newElement.classList.add('square');
     newElement.classList.add('no-birthday-img');
     newElement.innerHTML = `
-    <div style = "height: 298px">
-        <img src='../images/no-birthday.svg' height= "100%" width="100%" />
+    <div>
+        <img src='../images/no-birthday.svg' class="no-birthday-img" />
+        <p class="no-birthday-text">No Birthdays!</p>
     </div>
     `;
     newElement.style = `
@@ -93,6 +94,8 @@ const fillCard = () => {
         let id = getCardSelector(day);
         let cardWidth = getDimension(id);
 
+        console.log("day = " + day + "cardWidth =  " + cardWidth);
+
         //total squares to be generated
         let personCount = segregatedBirthdays[day].length;
 
@@ -101,6 +104,7 @@ const fillCard = () => {
         console.log(squaresPerRow);
         //each square dimension
         let squareDimension = cardWidth / squaresPerRow;
+        console.log("squareDimension = " + squareDimension);
 
         //dynamically create grid 
         document.getElementById(id).style.gridTemplateColumns = `repeat(${squaresPerRow}, ${squareDimension}px)`;
