@@ -227,4 +227,21 @@ input[type="submit"]:hover {
   #json-input {
     min-height: 80px;
   }
+
+  #input-area {
+    display: block;
+  }
+
+  #left-half,
+  #right-half {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  #left-half label {
+    margin-bottom: 10px;
+  }
 }
