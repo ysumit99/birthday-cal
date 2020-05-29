@@ -25,6 +25,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         newElement.style = `
         display: flex;
         font-weight: 300; 
+        font-size: 1.8rem;
         justify-content: center;
         align-items: center;
         border: 1px solid white;

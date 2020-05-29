@@ -19,7 +19,7 @@ const getDimension = (id) => {
 
 const getInitials = (name) => {
     let initials = name.split(" ");
-    return initials[0][0] + initials[1][0];
+    return initials[0][0] + initials[initials.length - 1][0];
 }
 
 const getRandomColor = () => {
