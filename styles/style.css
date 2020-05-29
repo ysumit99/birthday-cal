@@ -165,6 +165,10 @@ label {
   background-color: burlywood;
 }
 
+#left-half label {
+  margin-bottom: 10px;
+}
+
 input[type="text"] {
   width: 40%;
   padding: 12px 20px;
@@ -265,10 +269,6 @@ input[type="submit"]:hover {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 10px;
-  }
-
-  #left-half label {
     margin-bottom: 10px;
   }
 }
