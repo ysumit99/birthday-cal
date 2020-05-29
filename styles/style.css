@@ -188,6 +188,21 @@ input[type="submit"]:hover {
   background-color: rgb(47, 107, 180);
 }
 
+.no-birthday-img {
+  display: block;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+}
+
+.no-birthday-text {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  color: grey;
+  margin-top: 5px;
+}
+
 .end-line {
   margin: 25px 0;
   height: 1px;

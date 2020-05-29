@@ -52,16 +52,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
         newElement.innerHTML = `
     <div>
    
-        <img src='../images/no-birthday.svg' class="no-birthday-img" style = "display: block;
-        margin: auto;
-        height: 100%;
-        width: 100%;" />
+        <img src='../images/no-birthday.svg' class="no-birthday-img"  />
 
-        <p class="no-birthday-text" style=" text-align: center;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1.2rem;
-        color: grey;
-        margin-top: 5px;">No Birthdays!</p>
+        <p class="no-birthday-text" >No Birthdays!</p>
     </div>
     `;
 
@@ -172,9 +165,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const processInput = (e) => {
 
         e.preventDefault();
-
-        //reset previous result
-        birthdays.length > 0 ? resetCards() : null;
+        resetCards();
 
         //get input data
         birthdays = document.getElementById('json-input').value;
