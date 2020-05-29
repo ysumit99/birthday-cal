@@ -99,6 +99,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     }
 
+    const scrollBackToTop = () => {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0;  // For Chrome, Firefox, IE and Opera
+    }
+
     const fillCard = () => {
 
         for (day in segregatedBirthdays) {
@@ -215,8 +220,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         });
 
-        // fill card
+        // fill card and scroll to top
         fillCard();
+        scrollBackToTop();
+
     }
 
     document.getElementById('birthday-cal').onsubmit = processInput;
