@@ -33,7 +33,17 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 
+@keyframes scaleDown {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .card {
+  animation: 1s ease-out 0s 1 scaleDown;
   position: relative;
   height: 350px;
   width: 300px;
